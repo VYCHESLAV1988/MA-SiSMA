@@ -1,0 +1,185 @@
+{
+  "morning": [
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 1000,
+      "endMs": 2300,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 3050,
+      "endMs": 4350,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 5100,
+      "endMs": 6400,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אוף! איפה המפתחות שלי?!",
+      "startMs": 8400,
+      "endMs": 11100,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אוף!",
+      "startMs": 11100,
+      "endMs": 11900,
+      "timestampMs": null,
+      "confidence": null
+    }
+  ],
+  "road": [
+    {
+      "text": "היי, מטומטם!",
+      "startMs": 4200,
+      "endMs": 5400,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "הלוואי שתישאר\nבלי נייר טואלט!",
+      "startMs": 5400,
+      "endMs": 8500,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 11200,
+      "endMs": 12500,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 13250,
+      "endMs": 14550,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 15300,
+      "endMs": 16600,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "לה־לה־לה, לה־לה־לה!",
+      "startMs": 17350,
+      "endMs": 18900,
+      "timestampMs": null,
+      "confidence": null
+    }
+  ],
+  "intercom": [
+    {
+      "text": "מה הסיסמה?",
+      "startMs": 1100,
+      "endMs": 3000,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 4000,
+      "endMs": 5300,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 6050,
+      "endMs": 7350,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 8100,
+      "endMs": 9400,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 10150,
+      "endMs": 11450,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 12200,
+      "endMs": 13500,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 14250,
+      "endMs": 15550,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "מָה הַסִּיסְמָה?!",
+      "startMs": 17500,
+      "endMs": 20200,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "пиздец котёнку",
+      "startMs": 21000,
+      "endMs": 23500,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "הסיסמה התקבלה.\nכנסי, חמודה.",
+      "startMs": 24000,
+      "endMs": 28000,
+      "timestampMs": null,
+      "confidence": null
+    }
+  ],
+  "final": [
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 200,
+      "endMs": 1500,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני חמודה ♪",
+      "startMs": 2250,
+      "endMs": 3550,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אני עייפה ♪",
+      "startMs": 4300,
+      "endMs": 5600,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "אוף! אני עייפה!",
+      "startMs": 12600,
+      "endMs": 15300,
+      "timestampMs": null,
+      "confidence": null
+    }
+  ]
+}

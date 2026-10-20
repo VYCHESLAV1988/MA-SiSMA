@@ -1,0 +1,94 @@
+{
+  "engine": "Kokoro ONNX",
+  "engine_version": "0.6.1",
+  "voice": "bf_emma",
+  "model_native_hebrew": false,
+  "pronunciation": "Manually authored complete IPA utterances; all phonemes checked against model vocabulary.",
+  "singing": "Original continuous low-register 174.61–220 Hz tune applied with Praat overlap-add to full neural phrases; no syllable splicing.",
+  "phrase_seconds": 1.3,
+  "real_vocal_rest_seconds": 0.75,
+  "identity": "Synthetic adult female voice; no photo subject voice cloning.",
+  "model_source": "https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.1",
+  "model_sha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+  "clips": [
+    {
+      "file": "01-song.wav",
+      "text": "אני חמודה | אני חמודה | אני חמודה",
+      "seconds": 6.15,
+      "kind": "coherent neural singing",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "02-keys.wav",
+      "text": "אוף, איפה המפתחות שלי? אוף!",
+      "phonemes": "uf! ˈefo hɑmɑfteˈxot ʃeˈli? uf!",
+      "seconds": 3.2180045351473923,
+      "kind": "coherent neural speech",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "03-traffic.wav",
+      "text": "היי, מטומטם! הלוואי שתישאר בלי נייר טואלט!",
+      "phonemes": "hej, metumˈtɑm! hɑlɑˈvɑj ʃetiʃɑˈeʁ bli niˈjɑʁ tuɑˈlet!",
+      "seconds": 3.8590022675736964,
+      "kind": "coherent neural speech",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "04-song-lala.wav",
+      "text": "אני חמודה | אני חמודה | אני חמודה | לה לה לה, לה לה לה",
+      "seconds": 7.65,
+      "kind": "coherent neural singing",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "05-guard1.wav",
+      "seconds": 1.438,
+      "speaker": "guard",
+      "text": "מה הסיסמה?"
+    },
+    {
+      "file": "06-song6.wav",
+      "text": "אני חמודה | אני חמודה | אני חמודה | אני חמודה | אני חמודה | אני חמודה",
+      "seconds": 12.3,
+      "kind": "coherent neural singing",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "07-guard2.wav",
+      "seconds": 2.071,
+      "speaker": "guard",
+      "text": "מה הסיסמה?!"
+    },
+    {
+      "file": "08-password.wav",
+      "text": "пиздец котёнку",
+      "phonemes": "pʲɪzˈdʲets kɑˈtʲonkʊ.",
+      "seconds": 1.4560090702947845,
+      "kind": "coherent neural speech",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "09-accepted.wav",
+      "seconds": 3.18,
+      "speaker": "guard",
+      "text": "הסיסמה התקבלה. כנסי, חמודה."
+    },
+    {
+      "file": "10-final.wav",
+      "text": "אני חמודה | אני חמודה | אני עייפה",
+      "seconds": 6.15,
+      "kind": "coherent neural singing",
+      "voice": "bf_emma"
+    },
+    {
+      "file": "11-office-shout.wav",
+      "text": "אוף! אני עייפה!",
+      "phonemes": "uf! ɑˈni ɑjeˈfɑ!",
+      "seconds": 2.35,
+      "kind": "coherent neural speech",
+      "voice": "bf_emma"
+    }
+  ],
+  "guard_voice": "Local eSpeak NG he+m3, filtered as intercom; existing guard files retained."
+}
