@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create staged native Hebrew/Russian neural voice auditions with edge-tts.
+"""Create staged auditions for exactly two character voices with edge-tts.
 
 No API key or paid account. Internet access to speech.platform.bing.com is needed.
 Outputs stay separate from production audio; no speech speedup or pitch replacement.
@@ -27,7 +27,7 @@ except ImportError:
 PROJECT = Path(__file__).resolve().parents[1]
 FEMALE = 'he-IL-HilaNeural'
 MALE = 'he-IL-AvriNeural'
-RUSSIAN = 'ru-RU-SvetlanaNeural'
+SPEAKERS = {'heroine': FEMALE, 'guard': MALE}
 REST = 0.75
 
 
@@ -72,7 +72,7 @@ async def generate(args):
     configure_trust()
     catalog = await edge_tts.list_voices(proxy=proxy())
     voices = {voice['ShortName']: voice for voice in catalog}
-    required = (FEMALE, MALE, RUSSIAN)
+    required = tuple(SPEAKERS.values())
     for name in required:
         if name not in voices:
             raise RuntimeError(f'Voice not in current Microsoft catalog: {name}')
@@ -81,13 +81,18 @@ async def generate(args):
         return
     args.output.mkdir(parents=True, exist_ok=True)
     manifest = {'provider': 'Microsoft Read Aloud through edge-tts',
-                'synthetic': True, 'rest_seconds': REST, 'clips': []}
+                'synthetic': True, 'rest_seconds': REST,
+                'speakers': SPEAKERS,
+                'review_required': ['Hebrew pronunciation',
+                                    'Russian password pronunciation in the same heroine voice',
+                                    'Natural delivery and refrain melody'],
+                'clips': []}
     with tempfile.TemporaryDirectory(prefix='native-voice-audition-') as temporary:
         temporary = Path(temporary)
 
-        async def spoken(name, text, voice, rate='-5%'):
+        async def spoken(name, text, speaker, rate='-5%'):
             destination = temporary / name
-            client = edge_tts.Communicate(text, voice=voice, rate=rate,
+            client = edge_tts.Communicate(text, voice=SPEAKERS[speaker], rate=rate,
                                           pitch='+0Hz', proxy=proxy())
             await client.save(str(destination))
             if destination.stat().st_size < 100:
@@ -96,20 +101,23 @@ async def generate(args):
 
         phrases = []
         for index, text in enumerate(('אני חמודה!', 'אני חמודה.', 'אני חמודה!')):
-            phrases.append(await spoken(f'girl-{index}.mp3', text, FEMALE))
+            phrases.append(await spoken(f'girl-{index}.mp3', text, 'heroine'))
         girl = args.output / 'female-hebrew-with-pauses.wav'
         join_phrases(phrases, girl)
-        manifest['clips'].append({'file': girl.name, 'voice': FEMALE,
+        manifest['clips'].append({'file': girl.name, 'speaker': 'heroine', 'voice': FEMALE,
                                   'text': 'אני חמודה | אני חמודה | אני חמודה',
                                   'seconds': duration(girl)})
-        for name, text, voice, rate in (
-            ('male-guard-hebrew.mp3', 'מה הסיסמה?', MALE, '-3%'),
-            ('female-russian-password.mp3', 'пиздец котёнку.', RUSSIAN, '-5%'),
+        for name, text, speaker, rate in (
+            ('male-guard-hebrew.mp3', 'מה הסיסמה?', 'guard', '-3%'),
+            # Audition Hila on the actual Russian text. Do not replace her with
+            # a third voice if pronunciation fails; choose one bilingual heroine.
+            ('female-russian-password.mp3', 'пиздец котёнку.', 'heroine', '-5%'),
         ):
-            source = await spoken(name, text, voice, rate)
+            source = await spoken(name, text, speaker, rate)
             destination = args.output / name
             destination.write_bytes(source.read_bytes())
-            manifest['clips'].append({'file': name, 'voice': voice, 'text': text,
+            manifest['clips'].append({'file': name, 'speaker': speaker,
+                                      'voice': SPEAKERS[speaker], 'text': text,
                                       'seconds': duration(destination)})
     (args.output / 'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False,
                                                         indent=2) + '\n')
